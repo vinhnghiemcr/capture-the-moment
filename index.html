@@ -1,761 +1,745 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capture the Moment Photography | Capturing Life's Beautiful Moments</title>
-    <meta name="description" content="Professional photography services for portraits, events, and special occasions. Book your session today.">
-    <meta name="keywords" content="photography, portraits, events, wedding photography, professional photographer">
-    <meta property="og:title" content="Capture the Moment Photography">
-    <meta property="og:description" content="Capturing Life's Beautiful Moments">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Nghiem Truong Photography | Portrait, Graduation, Family & Event</title>
+    <meta name="description" content="Professional photography services. Portrait, graduation, family, and event photography. Moody, bright, documentary, and editorial styles.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#f8fafc',
+                            dark: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #c9a87c;
-            --light: #f8f6f3;
-            --text: #4a4a4a;
-            --white: #ffffff;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background: var(--light);
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
         }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
         }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: none;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
         }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-        }
-        
-        .mobile-menu span {
-            width: 25px;
-            height: 2px;
-            background: var(--primary);
-        }
-        
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--light) 0%, #e8e4df 100%);
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-        }
-        
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        
-        .hero-content p {
-            font-size: 1.25rem;
-            color: var(--text);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 2px solid var(--primary);
-        }
-        
-        .cta-button:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-        
-        .cta-secondary {
-            display: inline-block;
-            margin-left: 1rem;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            transition: all 0.3s;
-        }
-        
-        .cta-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        /* Sections */
-        section {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        /* Portfolio */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            aspect-ratio: 4/5;
-            background: #ddd;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
         .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.5s ease;
         }
-        
         .portfolio-item:hover img {
             transform: scale(1.05);
         }
-        
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: white;
-            padding: 2rem 1.5rem 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-        
-        .portfolio-overlay h3 {
-            color: white;
-            font-size: 1.25rem;
-        }
-        
-        .portfolio-categories {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .category-btn {
-            padding: 0.5rem 1.5rem;
-            border: 1px solid var(--primary);
-            background: transparent;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s;
-        }
-        
-        .category-btn:hover,
-        .category-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            aspect-ratio: 3/4;
-            background: #ddd;
-            position: relative;
-        }
-        
-        .about-image::after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: -20px;
-            bottom: -20px;
-            border: 2px solid var(--accent);
-            z-index: -1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .credentials {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0,0,0,0.1);
-        }
-        
-        .credentials h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        
-        .credentials ul {
-            list-style: none;
-        }
-        
-        .credentials li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .credentials li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card .price {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin: 1rem 0;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .service-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .service-card li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        
-        /* Contact */
-        .contact-section {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .contact-section h2 {
-            color: white;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-info h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-info p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-detail a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: none;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
-        
-        .contact-form button {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 1rem 2.5rem;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        
-        .contact-form button:hover {
-            opacity: 0.9;
-        }
-        
-        /* Booking */
-        .booking-section {
-            text-align: center;
-            background: var(--light);
-        }
-        
-        .booking-section p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: flex;
-            }
-            
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .cta-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-            
-            section {
-                padding: 4rem 5%;
-            }
-        }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#" class="logo">Capture the Moment</a>
-        <ul class="nav-links">
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#booking" class="cta-button" style="padding: 0.5rem 1.5rem;">Book Now</a></li>
-        </ul>
-        <div class="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-bold tracking-tight">
+                    <span class="text-gray-900 dark:text-white">Nghiem</span>
+                    <span class="text-primary-600">Truong</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+                    <a href="#portfolio" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</a>
+                    <a href="#services" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</a>
+                    <a href="#booking" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Book</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t">
+            <div class="px-4 py-2 space-y-1">
+                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300" onclick="closeMobileMenu()">About</a>
+                <a href="#portfolio" class="block py-2 text-gray-600 dark:text-gray-300" onclick="closeMobileMenu()">Portfolio</a>
+                <a href="#services" class="block py-2 text-gray-600 dark:text-gray-300" onclick="closeMobileMenu()">Services</a>
+                <a href="#booking" class="block py-2 text-gray-600 dark:text-gray-300" onclick="closeMobileMenu()">Book</a>
+                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300" onclick="closeMobileMenu()">Contact</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Capturing Life's<br>Beautiful Moments</h1>
-            <p>Professional photography that tells your unique story. From intimate portraits to grand celebrations, I create timeless images you'll treasure forever.</p>
-            <a href="#portfolio" class="cta-button">View Portfolio</a>
-            <a href="#booking" class="cta-secondary">Book a Session</a>
+    
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero-placeholder.jpg" alt="Photography Background" 
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight fade-in">
+                Capturing Your
+                <span class="block text-primary-400">Precious Moments</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto fade-in" style="animation-delay: 0.2s">
+                Portrait, Graduation, Family, and Event Photography with a style that tells your unique story
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="animation-delay: 0.4s">
+                <a href="#portfolio" class="px-8 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition transform hover:scale-105">
+                    View Portfolio
+                </a>
+                <a href="#booking" class="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    Book a Session
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <div class="portfolio-categories">
-            <button class="category-btn active">All</button>
-            <button class="category-btn">Portraits</button>
-            <button class="category-btn">Kids</button>
-            <button class="category-btn">Graduation</button>
-            <button class="category-btn">Lifestyle</button>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="images/portfolio/outdoor-portrait.jpg" alt="Outdoor portrait photography">
-                <div class="portfolio-overlay">
-                    <h3>Outdoor Portrait</h3>
-                    <p>Portrait Session</p>
+    <section id="about" class="py-20 md:py-32 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="aspect-[3/4] bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden">
+                        <div class="flex items-center justify-center h-full text-gray-400">
+                            <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-primary-600 text-white p-6 rounded-xl shadow-lg">
+                        <p class="text-3xl font-bold">5+</p>
+                        <p class="text-sm">Years Experience</p>
+                    </div>
                 </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/graduation-1.jpg" alt="Graduation photography">
-                <div class="portfolio-overlay">
-                    <h3>Graduation Celebration</h3>
-                    <p>Graduation Session</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-portrait.jpg" alt="Kid portrait photography">
-                <div class="portfolio-overlay">
-                    <h3>Candid Kid Portrait</h3>
-                    <p>Kids Photography</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/graduation-2.jpg" alt="Graduation photography">
-                <div class="portfolio-overlay">
-                    <h3>Milestone Moment</h3>
-                    <p>Graduation Session</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-formal.jpg" alt="Formal kid portrait">
-                <div class="portfolio-overlay">
-                    <h3>Formal Portrait</h3>
-                    <p>Kids Photography</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-graduation.jpg" alt="Kid graduation photography">
-                <div class="portfolio-overlay">
-                    <h3>Little Graduate</h3>
-                    <p>Graduation Session</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-traditional-blue.jpg" alt="Traditional outfit photography">
-                <div class="portfolio-overlay">
-                    <h3>Traditional Attire</h3>
-                    <p>Cultural Portraits</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-traditional-red.jpg" alt="Traditional outfit photography">
-                <div class="portfolio-overlay">
-                    <h3>Cultural Heritage</h3>
-                    <p>Cultural Portraits</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/kid-traditional-umbrella.jpg" alt="Traditional outfit with umbrella">
-                <div class="portfolio-overlay">
-                    <h3>Traditional Elegance</h3>
-                    <p>Cultural Portraits</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio/lifestyle-water.jpg" alt="Lifestyle photography">
-                <div class="portfolio-overlay">
-                    <h3>Playful Moments</h3>
-                    <p>Lifestyle Photography</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" style="background: white;">
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="images/about-portrait.jpg" alt="Photographer portrait - replace with your photo">
-            </div>
-            <div class="about-content">
-                <h2>Hello, I'm Nghiem Truong</h2>
-                <p>Photographer, coder, tutor, traveler, hiker, and skier. I have a passion for freezing life's most beautiful moments through photography — capturing the beauty of scenery, people, and wildlife.</p>
-                <p>Based in the DMV area, I specialize in portraits, graduations, cultural celebrations, and landscape photography. Every photo I take is a story waiting to be told.</p>
-                <div class="credentials">
-                    <h3>Credentials & Experience</h3>
-                    <ul>
-                        <li>5+ years of professional photography experience</li>
-                        <li>100+ happy clients served</li>
-                        <li>Serving San Antonio & surrounding areas</li>
-                        <li>Specialized in portraits, cultural & graduation photography</li>
-                        <li>Specialized in Portraits, Graduations, Wildlife & Landscapes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-title">Services & Pricing</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Portrait Session</h3>
-                <div class="price">$150</div>
-                <p>Perfect for individuals, couples, or families looking for timeless portraits.</p>
-                <ul>
-                    <li>1-2 hour session</li>
-                    <li>30+ professionally edited photos</li>
-                    <li>Online gallery</li>
-                    <li>Print release included</li>
-                    <li>Outdoor or studio available</li>
-                </ul>
-                <a href="#booking" class="cta-button" style="display: block; text-align: center;">Book Now</a>
-            </div>
-            <div class="service-card">
-                <h3>Event Coverage</h3>
-                <div class="price">$125/hr</div>
-                <p>Professional coverage for corporate events, parties, and celebrations.</p>
-                <ul>
-                    <li>Minimum 2 hours</li>
-                    <li>Full event coverage</li>
-                    <li>50+ edited photos per hour</li>
-                    <li>Quick turnaround</li>
-                    <li>Online gallery</li>
-                </ul>
-                <a href="#booking" class="cta-button" style="display: block; text-align: center;">Book Now</a>
-            </div>
-            <div class="service-card">
-                <h3>Wedding Package</h3>
-                <div class="price">$1,800</div>
-                <p>Complete wedding day coverage to capture every precious moment.</p>
-                <ul>
-                    <li>8 hours of coverage</li>
-                    <li>Second photographer available</li>
-                    <li>300+ edited photos</li>
-                    <li>Engagement session included</li>
-                    <li>Custom wedding album option</li>
-                </ul>
-                <a href="#booking" class="cta-button" style="display: block; text-align: center;">Book Now</a>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 3rem; font-style: italic;">Custom packages available - contact me for a personalized quote</p>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="booking" class="booking-section">
-        <h2 class="section-title">Ready to Book?</h2>
-        <p>Let's create something beautiful together. Check my availability and schedule your session using the calendar below.</p>
-        <a href="https://calendly.com/vinhnghiemcr" class="cta-button" target="_blank" style="font-size: 1.1rem;">Check Availability & Book</a>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">Prefer to chat first? <a href="#contact" style="color: var(--accent);">Contact me</a> with any questions.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2 class="section-title" style="color: white;">Get In Touch</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>Have questions about my services or want to discuss a custom project? I'd love to hear from you. Reach out and I'll get back to you within 24 hours.</p>
-                <div class="contact-detail">
-                    <span>📧</span>
-                    <a href="mailto:vinhnghiemcr@gmail.com">vinhnghiemcr@gmail.com</a>
-                </div>
-                <div class="contact-detail">
-                    <span>📱</span>
-                    <a href="tel:571-485-5154">571-485-5154</a>
-                </div>
-                <div class="contact-detail">
-                    <span>📍</span>
-                    <span>DMV Area (DC, Maryland, Virginia)</span>
-                </div>
-                <div style="margin-top: 2rem;">
-                    <h3>Follow Me</h3>
-                    <div class="social-links" style="justify-content: flex-start;">
-                        <a href="https://instagram.com/" target="_blank">IG</a>
-                        <a href="https://facebook.com/" target="_blank">FB</a>
+                
+                <div>
+                    <p class="text-primary-600 font-semibold mb-2">ABOUT ME</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
+                        Hi, I'm Nghiem. I believe every moment deserves to be remembered beautifully.
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                        I'm a photographer passionate about capturing authentic emotions and genuine connections. Whether it's the joy of graduation, the warmth of family bonds, or the excitement of a special event, I strive to document these fleeting moments with artistry and care.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        My approach is versatile - from moody and dramatic to bright and airy, documentary-style candids to polished editorial shots. Every session is unique, and I adapt my style to match your vision and personality.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="dark:text-gray-300">Moody & Dramatic</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="dark:text-gray-300">Bright & Airy</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="dark:text-gray-300">Documentary</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="dark:text-gray-300">Editorial</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <form class="contact-form" action="mailto:vinhnghiemcr@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://instagram.com/" target="_blank">IG</a>
-            <a href="https://facebook.com/" target="_blank">FB</a>
+    <section id="portfolio" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold mb-2">PORTFOLIO</p>
+                <h2 class="text-3xl md:text-4xl font-bold dark:text-white">Featured Work</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+                    Browse through my latest photography sessions. Click on any category to explore more.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterPortfolio('all')" class="filter-btn px-6 py-2 rounded-full bg-primary-600 text-white font-medium transition hover:shadow-lg">All</button>
+                <button onclick="filterPortfolio('portrait')" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium transition hover:shadow-lg">Portraits</button>
+                <button onclick="filterPortfolio('graduation')" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium transition hover:shadow-lg">Graduation</button>
+                <button onclick="filterPortfolio('family')" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium transition hover:shadow-lg">Family</button>
+                <button onclick="filterPortfolio('event')" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium transition hover:shadow-lg">Events</button>
+            </div>
+            
+            <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="portfolio-item portrait group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <p class="text-sm">Portrait Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Portrait Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Individual & Professional</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item portrait group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <p class="text-sm">Portrait Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Portrait Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Headshots & Lifestyle</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item graduation group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        </svg>
+                        <p class="text-sm">Graduation Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Graduation Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Senior Portraits</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item graduation group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        </svg>
+                        <p class="text-sm">Graduation Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Graduation Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Cap & Gown</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item family group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <p class="text-sm">Family Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Family Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Family Portraits</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item family group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <p class="text-sm">Family Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Family Sessions</h3>
+                        <p class="text-gray-300 text-sm mt-1">Lifestyle & Milestones</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item event group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Event Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Event Coverage</h3>
+                        <p class="text-gray-300 text-sm mt-1">Celebrations & Parties</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item event group relative overflow-hidden rounded-xl cursor-pointer aspect-[3/4] bg-gray-200 dark:bg-gray-700">
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Event Photo</p>
+                    </div>
+                    <div class="portfolio-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold">Event Coverage</h3>
+                        <p class="text-gray-300 text-sm mt-1">Corporate & Special Events</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-500 dark:text-gray-400 mb-4">More portfolio photos coming soon!</p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition">
+                    See something you like? Let's create together
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <p>&copy; 2024 Capture the Moment Photography. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.9rem;">Made with ❤️ by Nghiem Truong</p>
+    </section>
+
+    <section id="services" class="py-20 md:py-32 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold mb-2">SERVICES</p>
+                <h2 class="text-3xl md:text-4xl font-bold dark:text-white">Investment</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+                    Transparent pricing for every occasion. All sessions include professional editing and a private online gallery.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Portrait Session</h3>
+                    <p class="text-3xl font-bold text-primary-600 mb-4">$150-300</p>
+                    <ul class="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            60 minutes
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            25 edited photos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Online gallery
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Print release
+                        </li>
+                    </ul>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Graduation Session</h3>
+                    <p class="text-3xl font-bold text-primary-600 mb-4">$200-350</p>
+                    <ul class="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            90 minutes
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            40 edited photos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Multiple locations
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Outfit changes
+                        </li>
+                    </ul>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Family Session</h3>
+                    <p class="text-3xl font-bold text-primary-600 mb-4">$250-400</p>
+                    <ul class="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            90 minutes
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            50 edited photos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Up to 6 people
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Group & individual shots
+                        </li>
+                    </ul>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white">
+                <div class="md:flex items-center justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Event Coverage</h3>
+                        <p class="text-primary-100">Birthdays, corporate events, celebrations & more</p>
+                        <ul class="mt-4 space-y-2 text-primary-100">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                3+ hours coverage
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                100+ edited photos
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Quick turnaround
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl md:text-5xl font-bold">$400-800</p>
+                        <a href="#booking" class="inline-block mt-4 px-8 py-3 bg-white text-primary-600 rounded-full font-semibold hover:bg-gray-100 transition">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-2 dark:text-white">Mini Session</h3>
+                <p class="text-3xl font-bold text-primary-600 mb-4">$75-150</p>
+                <p class="text-gray-600 dark:text-gray-300">30 minutes • 10 edited photos • Perfect for quick updates</p>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-bold text-center mb-6 dark:text-white">Package Add-ons</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                        <p class="font-semibold dark:text-white">Extra Hour</p>
+                        <p class="text-primary-600 font-bold">$100-150</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                        <p class="font-semibold dark:text-white">Rush Delivery</p>
+                        <p class="text-primary-600 font-bold">$100</p>
+                        <p class="text-xs text-gray-500">3-5 days</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                        <p class="font-semibold dark:text-white">Extra Edits</p>
+                        <p class="text-primary-600 font-bold">$5/photo</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                        <p class="font-semibold dark:text-white">Travel Fee</p>
+                        <p class="text-primary-600 font-bold">$0.50/mi</p>
+                        <p class="text-xs text-gray-500">Outside service area</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-primary-600 font-semibold mb-2">BOOK A SESSION</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 dark:text-white">Ready to Create Something Beautiful?</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let's schedule your session! Click below to view available dates and book your spot. I can't wait to work with you.
+            </p>
+
+            <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" 
+               class="inline-flex items-center gap-3 px-8 py-4 bg-primary-600 text-white rounded-full font-semibold text-lg hover:bg-primary-700 transition transform hover:scale-105 shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Schedule a Consultation
+            </a>
+
+            <p class="mt-6 text-gray-500 dark:text-gray-400">
+                Prefer to email? Reach out at <a href="mailto:nghiemtruongcorp@gmail.com" class="text-primary-600 hover:underline">nghiemtruongcorp@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-primary-600 font-semibold mb-2">GET IN TOUCH</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 dark:text-white">Let's Connect</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Have questions about a session? Want to discuss a custom package? I'd love to hear from you! Fill out the form or reach out directly.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold dark:text-white">Email</p>
+                                <a href="mailto:nghiemtruongcorp@gmail.com" class="text-primary-600 hover:underline">nghiemtruongcorp@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold dark:text-white">Book Online</p>
+                                <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" class="text-primary-600 hover:underline">calendly.com/nghiemtruongcorp</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold dark:text-white">Instagram</p>
+                                <a href="#" class="text-primary-600 hover:underline">@[YourHandle]</a>
+                                <span class="text-gray-400 text-sm"> (coming soon)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+                    <form action="mailto:nghiemtruongcorp@gmail.com" method="post" enctype="text/plain">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                <input type="text" name="name" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Session Type</label>
+                                <select name="session_type"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                    <option>Portrait Session</option>
+                                    <option>Graduation Session</option>
+                                    <option>Family Session</option>
+                                    <option>Event Coverage</option>
+                                    <option>Mini Session</option>
+                                    <option>Other / Not Sure</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                                <textarea name="message" rows="4" required
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                                          placeholder="Tell me about your vision, preferred dates, or any questions you have!"></textarea>
+                            </div>
+                            <button type="submit"
+                                    class="w-full py-4 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nghiem Truong Photography</h3>
+                    <p class="text-gray-400">Capturing your precious moments with style and care.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">nghiemtruongcorp@gmail.com</p>
+                    <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" class="text-primary-400 hover:text-primary-300">Book a Consultation</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 Nghiem Truong Photography. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Smooth scroll for navigation links
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent === 'All')) {
+                    btn.classList.remove('bg-white', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-200');
+                    btn.classList.add('bg-primary-600', 'text-white');
+                } else {
+                    btn.classList.add('bg-white', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-200');
+                    btn.classList.remove('bg-primary-600', 'text-white');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 300);
+                }
+            });
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // Category filter (basic functionality)
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
         });
     </script>
-</body>
-</html>e');
-            });
-        });
-    </script>
+
 </body>
 </html>
