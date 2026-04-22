@@ -32,6 +32,11 @@ In `index.html`, set:
 
 to the deployed Apps Script web app URL for the target environment.
 
+Recommended safety pattern:
+- keep TEST `BOOKING_API_URL` pointed at the TEST web app while validating
+- do not leave the production site pointed at the TEST web app
+- once PROD is deployed, paste the PROD web app URL into `index.html` and then publish the website update
+
 ## Recommended next step
 
 After this scaffold is validated, add the manual confirmation workflow:
