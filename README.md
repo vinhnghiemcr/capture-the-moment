@@ -8,7 +8,7 @@ A professional, responsive one-page photography website featuring portfolio gall
 - **About Section** - Photographer bio with experience highlight
 - **Portfolio Gallery** - Filterable gallery (Portrait, Graduation, Family, Event)
 - **Services/Pricing** - Clear pricing structure with add-ons
-- **Booking Section** - Calendly integration
+- **Booking Section** - Session request workflow with create/update/cancel states
 - **Contact Section** - Contact form + direct contact info
 - **Dark Mode** - Toggle between light and dark themes
 - **Mobile Responsive** - Fully responsive design
@@ -17,7 +17,7 @@ A professional, responsive one-page photography website featuring portfolio gall
 - **Framework**: Vanilla HTML + Tailwind CSS (CDN)
 - **Styling**: Tailwind CSS v3.x
 - **Icons**: Heroicons (SVG)
-- **Booking**: Calendly embedded link
+- **Booking**: Google Apps Script + Google Sheets + Gmail workflow scaffold
 - **No Build Step Required** - Pure HTML/CSS/JS
 
 ## File Structure
@@ -71,7 +71,7 @@ website/
 Edit these sections in `index.html`:
 - Business name (search for "Nghiem Truong Photography")
 - Email: `nghiemtruongcorp@gmail.com`
-- Calendly link: `https://calendly.com/nghiemtruongcorp/30min`
+- Booking request form webhook URL in `index.html` (`BOOKING_API_URL`)
 - Location/Service area
 
 ### Add Portfolio Photos
@@ -120,7 +120,7 @@ For best results:
 - [ ] Test portfolio filters
 - [ ] Test smooth scrolling navigation
 - [ ] Test contact form
-- [ ] Test Calendly link
+- [ ] Test booking request form
 
 ## Troubleshooting
 
@@ -129,9 +129,10 @@ For best results:
 - Ensure images are in the correct folder
 - Check browser console for 404 errors
 
-### Calendly not working?
-- Verify the Calendly URL is correct
-- Make sure your Calendly account is active
+### Booking form not working?
+- Verify `BOOKING_API_URL` points to the deployed Apps Script web app
+- Make sure the Google Sheet exists and `SPREADSHEET_ID` is filled in
+- Check Apps Script deployment access settings and execution logs
 
 ### Dark mode not persisting?
 - This is expected behavior - it saves to localStorage

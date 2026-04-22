@@ -131,7 +131,7 @@
                     View Portfolio
                 </a>
                 <a href="#booking" class="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
-                    Book a Session
+                    Request a Session
                 </a>
             </div>
         </div>
@@ -283,7 +283,7 @@
                             Online Download
                         </li>
                     </ul>
-                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Request a Session</a>
                 </div>
 
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1">
@@ -321,7 +321,7 @@
                             Outfit changes
                         </li>
                     </ul>
-                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Request a Session</a>
                 </div>
 
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1">
@@ -358,7 +358,7 @@
                             Group & individual shots
                         </li>
                     </ul>
-                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Book Now</a>
+                    <a href="#booking" class="block w-full text-center py-3 border-2 border-primary-600 text-primary-600 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition">Request a Session</a>
                 </div>
             </div>
 
@@ -390,7 +390,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-4xl md:text-5xl font-bold">$400-800</p>
-                        <a href="#booking" class="inline-block mt-4 px-8 py-3 bg-white text-primary-600 rounded-full font-semibold hover:bg-gray-100 transition">Get Quote</a>
+                        <a href="#booking" class="inline-block mt-4 px-8 py-3 bg-white text-primary-600 rounded-full font-semibold hover:bg-gray-100 transition">Request a Quote</a>
                     </div>
                 </div>
             </div>
@@ -426,24 +426,169 @@
             </div>
         </div>
     </section><section id="booking" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-primary-600 font-semibold mb-2">BOOK A SESSION</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 dark:text-white">Ready to Create Something Beautiful?</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let's schedule your session! Click below to view available dates and book your spot. I can't wait to work with you.
-            </p>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-primary-600 font-semibold mb-2">REQUEST A SESSION</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Check Availability Before We Confirm</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Submit a session request and I’ll review availability before confirming. This keeps scheduling flexible for travel, weather, locations, and session prep.
+                </p>
+            </div>
 
-            <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" 
-               class="inline-flex items-center gap-3 px-8 py-4 bg-primary-600 text-white rounded-full font-semibold text-lg hover:bg-primary-700 transition transform hover:scale-105 shadow-lg">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                Schedule a Consultation
-            </a>
+            <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <div id="bookingModeIntro" class="px-6 md:px-10 pt-8">
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <button type="button" data-mode="create" class="booking-mode-btn rounded-2xl border border-primary-600 bg-primary-600 text-white px-5 py-4 text-left transition" onclick="setBookingMode('create')">
+                            <span class="block font-semibold">New Request</span>
+                            <span class="block text-sm text-primary-100 mt-1">Ask about availability for a new session</span>
+                        </button>
+                        <button type="button" data-mode="update" class="booking-mode-btn rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-5 py-4 text-left transition" onclick="setBookingMode('update')">
+                            <span class="block font-semibold">Update Request</span>
+                            <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">Change date, time, location, or details</span>
+                        </button>
+                        <button type="button" data-mode="cancel" class="booking-mode-btn rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-5 py-4 text-left transition" onclick="setBookingMode('cancel')">
+                            <span class="block font-semibold">Cancel Request</span>
+                            <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">Let us know you no longer need the session</span>
+                        </button>
+                    </div>
+                </div>
 
-            <p class="mt-6 text-gray-500 dark:text-gray-400">
-                Prefer to email? Reach out at <a href="mailto:nghiemtruongcorp@gmail.com" class="text-primary-600 hover:underline">nghiemtruongcorp@gmail.com</a>
-            </p>
+                <div class="p-6 md:p-10">
+                    <div id="bookingSuccess" class="hidden rounded-2xl border border-green-200 bg-green-50 text-green-900 px-5 py-4 mb-6"></div>
+                    <div id="bookingError" class="hidden rounded-2xl border border-red-200 bg-red-50 text-red-900 px-5 py-4 mb-6"></div>
+                    <form id="bookingRequestForm" class="space-y-6">
+                        <input type="hidden" id="bookingAction" name="action" value="create">
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="bookingReference" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Request Reference</label>
+                                <input type="text" id="bookingReference" name="requestReference" placeholder="Required for updates/cancellations"
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="clientEmail" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="clientEmail" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                            </div>
+                        </div>
+
+                        <div id="createUpdateFields" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="clientName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+                                    <input type="text" id="clientName" name="name"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                                <div>
+                                    <label for="clientPhone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
+                                    <input type="tel" id="clientPhone" name="phone"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="sessionType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Session Type</label>
+                                    <select id="sessionType" name="sessionType"
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                        <option value="Portrait Session">Portrait Session</option>
+                                        <option value="Graduation Session">Graduation Session</option>
+                                        <option value="Family Session">Family Session</option>
+                                        <option value="Event Coverage">Event Coverage</option>
+                                        <option value="Mini Session">Mini Session</option>
+                                        <option value="College Graduation Session">College Graduation Session</option>
+                                        <option value="Other / Not Sure">Other / Not Sure</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="partySize" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of People</label>
+                                    <input type="number" id="partySize" name="numberOfPeople" min="1" step="1"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="preferredDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Date</label>
+                                    <input type="date" id="preferredDate" name="preferredDate"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                                <div>
+                                    <label for="preferredTime" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Time</label>
+                                    <input type="time" id="preferredTime" name="preferredTime"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="backupDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Backup Date</label>
+                                    <input type="date" id="backupDate" name="backupDate"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                                <div>
+                                    <label for="backupTime" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Backup Time</label>
+                                    <input type="time" id="backupTime" name="backupTime"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="locationPreference" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Location / Preferred Area</label>
+                                    <input type="text" id="locationPreference" name="location"
+                                           placeholder="San Antonio River Walk, downtown campus, studio, etc."
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                                <div>
+                                    <label for="schoolName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">School / College Name</label>
+                                    <input type="text" id="schoolName" name="schoolName"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="leadSource" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">How did you hear about us?</label>
+                                    <input type="text" id="leadSource" name="source"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                                <div>
+                                    <label for="instagramHandle" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Instagram Handle (optional)</label>
+                                    <input type="text" id="instagramHandle" name="instagramHandle" placeholder="@username"
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="requestNotes" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes</label>
+                                <textarea id="requestNotes" name="notes" rows="5"
+                                          placeholder="Tell us about your vision, goals, outfit ideas, location ideas, or anything else helpful."
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cancelFields" class="hidden space-y-4">
+                            <div>
+                                <label for="cancelReason" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Cancellation Note</label>
+                                <textarea id="cancelReason" name="cancelReason" rows="4"
+                                          placeholder="Optional, but helpful if you want to tell us why or note any follow-up needed."
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-2">
+                            <p id="bookingFormHint" class="text-sm text-gray-500 dark:text-gray-400">
+                                Submit a request, and we’ll check availability before confirming.
+                            </p>
+                            <button type="submit" id="bookingSubmitButton"
+                                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition shadow-lg">
+                                Send Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section><section id="contact" class="py-20 md:py-32 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -475,8 +620,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="font-semibold dark:text-white">Book Online</p>
-                                <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" class="text-primary-600 hover:underline">calendly.com/nghiemtruongcorp</a>
+                                <p class="font-semibold dark:text-white">Booking Requests</p>
+                                <a href="#booking" class="text-primary-600 hover:underline">Request a session online</a>
                             </div>
                         </div>
 
@@ -613,13 +758,13 @@
                         <li><a href="#about" class="hover:text-white transition">About</a></li>
                         <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
                         <li><a href="#services" class="hover:text-white transition">Services</a></li>
-                        <li><a href="#booking" class="hover:text-white transition">Book Now</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Request a Session</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
                     <p class="text-gray-400 mb-2">nghiemtruongcorp@gmail.com</p>
-                    <a href="https://calendly.com/nghiemtruongcorp/30min" target="_blank" class="text-primary-400 hover:text-primary-300">Book a Consultation</a>
+                    <a href="#booking" class="text-primary-400 hover:text-primary-300">Request a Session</a>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
@@ -629,6 +774,9 @@
     </footer>
 
     <script>
+        const BOOKING_API_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+        let bookingMode = 'create';
+
         function toggleDarkMode() {
             document.documentElement.classList.toggle('dark');
             localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
@@ -693,6 +841,145 @@
                 nav.classList.remove('shadow-md');
             }
         });
+
+        function setBookingMode(mode) {
+            bookingMode = mode;
+            document.getElementById('bookingAction').value = mode;
+
+            const modeButtons = document.querySelectorAll('.booking-mode-btn');
+            modeButtons.forEach(button => {
+                const active = button.dataset.mode === mode;
+                button.classList.toggle('bg-primary-600', active);
+                button.classList.toggle('border-primary-600', active);
+                button.classList.toggle('text-white', active);
+                button.classList.toggle('bg-white', !active);
+                button.classList.toggle('dark:bg-gray-800', !active);
+                button.classList.toggle('border-gray-200', !active);
+                button.classList.toggle('dark:border-gray-700', !active);
+                button.classList.toggle('text-gray-700', !active);
+                button.classList.toggle('dark:text-gray-200', !active);
+                const description = button.querySelector('span:last-child');
+                if (description) {
+                    description.classList.toggle('text-primary-100', active);
+                    description.classList.toggle('text-gray-500', !active);
+                    description.classList.toggle('dark:text-gray-400', !active);
+                }
+            });
+
+            const createUpdateFields = document.getElementById('createUpdateFields');
+            const cancelFields = document.getElementById('cancelFields');
+            const submitButton = document.getElementById('bookingSubmitButton');
+            const hint = document.getElementById('bookingFormHint');
+            const bookingReference = document.getElementById('bookingReference');
+            const clientName = document.getElementById('clientName');
+            const clientPhone = document.getElementById('clientPhone');
+            const preferredDate = document.getElementById('preferredDate');
+            const preferredTime = document.getElementById('preferredTime');
+
+            const isCreate = mode === 'create';
+            const isCancel = mode === 'cancel';
+
+            createUpdateFields.classList.toggle('hidden', isCancel);
+            cancelFields.classList.toggle('hidden', !isCancel);
+
+            bookingReference.required = !isCreate;
+            clientName.required = !isCancel;
+            clientPhone.required = isCreate;
+            preferredDate.required = isCreate;
+            preferredTime.required = false;
+
+            if (mode === 'create') {
+                submitButton.textContent = 'Send Request';
+                hint.textContent = 'Submit a request, and we’ll check availability before confirming.';
+            } else if (mode === 'update') {
+                submitButton.textContent = 'Send Update Request';
+                hint.textContent = 'Use your request reference so we can review and update your request.';
+            } else {
+                submitButton.textContent = 'Send Cancellation';
+                hint.textContent = 'Use your request reference so we can cancel the request cleanly.';
+            }
+        }
+
+        function showBookingMessage(type, message) {
+            const success = document.getElementById('bookingSuccess');
+            const error = document.getElementById('bookingError');
+            success.classList.add('hidden');
+            error.classList.add('hidden');
+
+            if (type === 'success') {
+                success.textContent = message;
+                success.classList.remove('hidden');
+            } else {
+                error.textContent = message;
+                error.classList.remove('hidden');
+            }
+        }
+
+        function buildBookingPayload(formData) {
+            return {
+                action: formData.get('action'),
+                requestReference: formData.get('requestReference')?.trim(),
+                name: formData.get('name')?.trim(),
+                email: formData.get('email')?.trim(),
+                phone: formData.get('phone')?.trim(),
+                sessionType: formData.get('sessionType')?.trim(),
+                preferredDate: formData.get('preferredDate')?.trim(),
+                preferredTime: formData.get('preferredTime')?.trim(),
+                backupDate: formData.get('backupDate')?.trim(),
+                backupTime: formData.get('backupTime')?.trim(),
+                location: formData.get('location')?.trim(),
+                schoolName: formData.get('schoolName')?.trim(),
+                numberOfPeople: formData.get('numberOfPeople')?.trim(),
+                source: formData.get('source')?.trim(),
+                instagramHandle: formData.get('instagramHandle')?.trim(),
+                notes: formData.get('notes')?.trim(),
+                cancelReason: formData.get('cancelReason')?.trim()
+            };
+        }
+
+        document.getElementById('bookingRequestForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (!BOOKING_API_URL || BOOKING_API_URL.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+                showBookingMessage('error', 'Booking form is not connected yet. Add the deployed Apps Script web app URL to BOOKING_API_URL before testing live submissions.');
+                return;
+            }
+
+            const submitButton = document.getElementById('bookingSubmitButton');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const payload = buildBookingPayload(new FormData(event.target));
+                const response = await fetch(BOOKING_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.error || 'Unable to send your request right now.');
+                }
+
+                event.target.reset();
+                setBookingMode('create');
+
+                const requestReferenceText = result.requestReference ? ` Your reference is ${result.requestReference}.` : '';
+                showBookingMessage('success', `${result.message || 'Your request has been sent successfully.'}${requestReferenceText}`);
+            } catch (error) {
+                showBookingMessage('error', error.message || 'Something went wrong while sending the form.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
+        });
+
+        setBookingMode('create');
     </script>
 
 </body>
