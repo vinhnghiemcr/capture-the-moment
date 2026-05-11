@@ -967,10 +967,17 @@
                         method: 'POST',
                         body: JSON.stringify(payload)
                     });
-                    const result = await response.json();
+                    const rawResponse = await response.text();
+                    let result;
+
+                    try {
+                        result = JSON.parse(rawResponse);
+                    } catch (parseError) {
+                        throw new Error('We could not send your request right now. Please try again in a moment or email nghiemtruongcorp@gmail.com.');
+                    }
 
                     if (!response.ok || !result.success) {
-                        throw new Error(result.error || 'Unable to send your request right now.');
+                        throw new Error(result.error || 'We could not send your request right now. Please try again in a moment or email nghiemtruongcorp@gmail.com.');
                     }
 
                     event.target.reset();
@@ -978,7 +985,7 @@
                     const requestReferenceText = result.requestReference ? ` Your reference is ${result.requestReference}.` : '';
                     showBookingMessage('success', `${result.message || 'Your request has been sent successfully.'}${requestReferenceText}`);
                 } catch (error) {
-                    showBookingMessage('error', error.message || 'Something went wrong while sending the form.');
+                    showBookingMessage('error', error.message || 'We could not send your request right now. Please try again in a moment or email nghiemtruongcorp@gmail.com.');
                 } finally {
                     if (submitButton) {
                         submitButton.disabled = false;
