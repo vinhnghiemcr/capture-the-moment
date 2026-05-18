@@ -1,4 +1,4 @@
-# Nghiem Truong Photography Website
+# Capture the Moment Photography Website
 
 A refined one-page photography website for portraits, graduation, family, and event sessions.
 
